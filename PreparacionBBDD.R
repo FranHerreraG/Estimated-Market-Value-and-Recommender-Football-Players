@@ -248,4 +248,4 @@ sum(df$ID>0)
 rm(df_aux,df_aux2,Encontrados,Fifa_aux,duplicados,FIFANAMES,FUTNAMES)
 rm(h,i,IDF_Borrar,IDF_malos,j,jugador,k,N_Fichajes,N_Jugadores,N_Perdidos)
 
-
+write.csv2(df,"Data/Fichajes18.csv")
