@@ -1,0 +1,3667 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20182.18.0627.2230                               -->
+<workbook original-version='18.1' source-build='2018.2.0 (20182.18.0627.2230)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <IntuitiveSorting />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Raw' inline='true' name='federated.1kpzaj91vfurcf1feytby0uj5vzy' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Raw' name='textscan.1ga1zbw0gl9kh81enzy3d1cgjmof'>
+            <connection class='textscan' directory='C:/Users/fjherrera/Documents/GitHub/Estimated-Market-Value-and-Recommender-Football-Players/Data/Tableau' filename='Raw.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1ga1zbw0gl9kh81enzy3d1cgjmof' name='Raw.csv' table='[Raw#csv]' type='table'>
+          <columns character-set='windows-1252' header='yes' locale='es_ES' separator=';'>
+            <column datatype='integer' name='ID' ordinal='0' />
+            <column datatype='string' name='name' ordinal='1' />
+            <column datatype='string' name='club' ordinal='2' />
+            <column datatype='string' name='league' ordinal='3' />
+            <column datatype='date' name='birth_date' ordinal='4' />
+            <column datatype='integer' name='height_cm' ordinal='5' />
+            <column datatype='integer' name='weight_kg' ordinal='6' />
+            <column datatype='string' name='nationality' ordinal='7' />
+            <column datatype='real' name='eur_value' ordinal='8' />
+            <column datatype='real' name='eur_wage' ordinal='9' />
+            <column datatype='string' name='eur_release_clause' ordinal='10' />
+            <column datatype='integer' name='overall' ordinal='11' />
+            <column datatype='integer' name='potential' ordinal='12' />
+            <column datatype='integer' name='pac' ordinal='13' />
+            <column datatype='integer' name='sho' ordinal='14' />
+            <column datatype='integer' name='pas' ordinal='15' />
+            <column datatype='integer' name='dri' ordinal='16' />
+            <column datatype='integer' name='def' ordinal='17' />
+            <column datatype='integer' name='phy' ordinal='18' />
+            <column datatype='integer' name='international_reputation' ordinal='19' />
+            <column datatype='integer' name='weak_foot' ordinal='20' />
+            <column datatype='string' name='work_rate_att' ordinal='21' />
+            <column datatype='string' name='work_rate_def' ordinal='22' />
+            <column datatype='string' name='preferred_foot' ordinal='23' />
+            <column datatype='integer' name='crossing' ordinal='24' />
+            <column datatype='integer' name='finishing' ordinal='25' />
+            <column datatype='integer' name='heading_accuracy' ordinal='26' />
+            <column datatype='integer' name='short_passing' ordinal='27' />
+            <column datatype='integer' name='volleys' ordinal='28' />
+            <column datatype='integer' name='dribbling' ordinal='29' />
+            <column datatype='integer' name='curve' ordinal='30' />
+            <column datatype='integer' name='free_kick_accuracy' ordinal='31' />
+            <column datatype='integer' name='long_passing' ordinal='32' />
+            <column datatype='integer' name='ball_control' ordinal='33' />
+            <column datatype='integer' name='acceleration' ordinal='34' />
+            <column datatype='integer' name='sprint_speed' ordinal='35' />
+            <column datatype='integer' name='agility' ordinal='36' />
+            <column datatype='integer' name='reactions' ordinal='37' />
+            <column datatype='integer' name='balance' ordinal='38' />
+            <column datatype='integer' name='shot_power' ordinal='39' />
+            <column datatype='integer' name='jumping' ordinal='40' />
+            <column datatype='integer' name='stamina' ordinal='41' />
+            <column datatype='integer' name='strength' ordinal='42' />
+            <column datatype='integer' name='long_shots' ordinal='43' />
+            <column datatype='integer' name='aggression' ordinal='44' />
+            <column datatype='integer' name='interceptions' ordinal='45' />
+            <column datatype='integer' name='positioning' ordinal='46' />
+            <column datatype='integer' name='vision' ordinal='47' />
+            <column datatype='integer' name='penalties' ordinal='48' />
+            <column datatype='integer' name='composure' ordinal='49' />
+            <column datatype='integer' name='marking' ordinal='50' />
+            <column datatype='integer' name='standing_tackle' ordinal='51' />
+            <column datatype='integer' name='sliding_tackle' ordinal='52' />
+            <column datatype='integer' name='gk_diving' ordinal='53' />
+            <column datatype='integer' name='gk_handling' ordinal='54' />
+            <column datatype='integer' name='gk_kicking' ordinal='55' />
+            <column datatype='integer' name='gk_positioning' ordinal='56' />
+            <column datatype='integer' name='gk_reflexes' ordinal='57' />
+            <column datatype='string' name='rs' ordinal='58' />
+            <column datatype='string' name='rw' ordinal='59' />
+            <column datatype='string' name='rf' ordinal='60' />
+            <column datatype='string' name='ram' ordinal='61' />
+            <column datatype='string' name='rcm' ordinal='62' />
+            <column datatype='string' name='rm' ordinal='63' />
+            <column datatype='string' name='rdm' ordinal='64' />
+            <column datatype='string' name='rcb' ordinal='65' />
+            <column datatype='string' name='rb' ordinal='66' />
+            <column datatype='string' name='rwb' ordinal='67' />
+            <column datatype='string' name='st' ordinal='68' />
+            <column datatype='string' name='lw' ordinal='69' />
+            <column datatype='string' name='cf' ordinal='70' />
+            <column datatype='string' name='cam' ordinal='71' />
+            <column datatype='string' name='cm' ordinal='72' />
+            <column datatype='string' name='lm' ordinal='73' />
+            <column datatype='string' name='cdm' ordinal='74' />
+            <column datatype='string' name='cb' ordinal='75' />
+            <column datatype='string' name='lb' ordinal='76' />
+            <column datatype='string' name='lwb' ordinal='77' />
+            <column datatype='string' name='ls' ordinal='78' />
+            <column datatype='string' name='lf' ordinal='79' />
+            <column datatype='string' name='lam' ordinal='80' />
+            <column datatype='string' name='lcm' ordinal='81' />
+            <column datatype='string' name='ldm' ordinal='82' />
+            <column datatype='string' name='lcb' ordinal='83' />
+            <column datatype='string' name='gk' ordinal='84' />
+            <column datatype='string' name='ultimoClub' ordinal='85' />
+            <column datatype='string' name='nuevoClub' ordinal='86' />
+            <column datatype='integer' name='coste' ordinal='87' />
+            <column datatype='string' name='mercado' ordinal='88' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;ibm-5348_P100-1997&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>club</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[club]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>club</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>league</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[league]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>league</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>birth_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[birth_date]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>birth_date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>height_cm</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[height_cm]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>height_cm</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>weight_kg</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[weight_kg]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>weight_kg</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nationality</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[nationality]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>nationality</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>eur_value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[eur_value]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>eur_value</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>eur_wage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[eur_wage]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>eur_wage</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>eur_release_clause</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[eur_release_clause]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>eur_release_clause</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>overall</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[overall]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>overall</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>potential</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[potential]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>potential</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pac</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[pac]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>pac</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sho</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sho]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>sho</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pas</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[pas]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>pas</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dri</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[dri]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>dri</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>def</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[def]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>def</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>phy</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[phy]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>phy</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>international_reputation</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[international_reputation]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>international_reputation</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>weak_foot</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[weak_foot]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>weak_foot</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>work_rate_att</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[work_rate_att]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>work_rate_att</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>work_rate_def</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[work_rate_def]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>work_rate_def</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>preferred_foot</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[preferred_foot]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>preferred_foot</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>crossing</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[crossing]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>crossing</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>finishing</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[finishing]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>finishing</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>heading_accuracy</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[heading_accuracy]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>heading_accuracy</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>short_passing</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[short_passing]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>short_passing</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>volleys</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[volleys]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>volleys</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dribbling</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[dribbling]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>dribbling</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>curve</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[curve]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>curve</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>free_kick_accuracy</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[free_kick_accuracy]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>free_kick_accuracy</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>long_passing</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[long_passing]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>long_passing</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ball_control</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ball_control]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>ball_control</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acceleration</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[acceleration]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>acceleration</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sprint_speed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sprint_speed]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>sprint_speed</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agility</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[agility]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>agility</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reactions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[reactions]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>reactions</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>balance</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[balance]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>balance</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>shot_power</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[shot_power]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>shot_power</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>jumping</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[jumping]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>jumping</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stamina</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[stamina]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>stamina</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>strength</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[strength]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>strength</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>long_shots</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[long_shots]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>long_shots</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>aggression</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[aggression]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>aggression</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>interceptions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[interceptions]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>interceptions</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>positioning</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[positioning]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>positioning</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vision</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[vision]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>vision</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>penalties</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[penalties]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>penalties</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>composure</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[composure]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>composure</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>marking</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[marking]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>marking</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>standing_tackle</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[standing_tackle]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>standing_tackle</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sliding_tackle</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sliding_tackle]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>sliding_tackle</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gk_diving</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[gk_diving]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>gk_diving</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gk_handling</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[gk_handling]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>gk_handling</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gk_kicking</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[gk_kicking]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>gk_kicking</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gk_positioning</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[gk_positioning]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>gk_positioning</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gk_reflexes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[gk_reflexes]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>gk_reflexes</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rs</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rs]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>rs</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rw</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rw]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>rw</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rf</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rf]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>rf</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ram</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ram]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>ram</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rcm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rcm]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>rcm</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rm]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>rm</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rdm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rdm]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>rdm</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rcb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rcb]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>rcb</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rb]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>rb</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rwb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rwb]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>rwb</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>st</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[st]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>st</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lw</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[lw]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>lw</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cf</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cf]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>cf</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cam</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cam]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>cam</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cm]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>cm</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[lm]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>lm</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cdm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cdm]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>cdm</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cb]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>cb</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[lb]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>lb</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lwb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[lwb]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>lwb</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ls</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ls]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>ls</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lf</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[lf]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>lf</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lam</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[lam]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>lam</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lcm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[lcm]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>lcm</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ldm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ldm]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>ldm</remote-alias>
+            <ordinal>82</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lcb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[lcb]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>lcb</remote-alias>
+            <ordinal>83</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gk</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gk]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>gk</remote-alias>
+            <ordinal>84</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ultimoClub</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ultimoClub]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>ultimoClub</remote-alias>
+            <ordinal>85</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nuevoClub</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[nuevoClub]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>nuevoClub</remote-alias>
+            <ordinal>86</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>coste</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[coste]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>coste</remote-alias>
+            <ordinal>87</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mercado</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[mercado]</local-name>
+            <parent-name>[Raw.csv]</parent-name>
+            <remote-alias>mercado</remote-alias>
+            <ordinal>88</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Acceleration' datatype='integer' name='[acceleration]' role='measure' type='quantitative' />
+      <column caption='Aggression' datatype='integer' name='[aggression]' role='measure' type='quantitative' />
+      <column caption='Agility' datatype='integer' name='[agility]' role='measure' type='quantitative' />
+      <column caption='Balance' datatype='integer' name='[balance]' role='measure' type='quantitative' />
+      <column caption='Ball Control' datatype='integer' name='[ball_control]' role='measure' type='quantitative' />
+      <column caption='Birth Date' datatype='date' name='[birth_date]' role='dimension' type='ordinal' />
+      <column caption='Cam' datatype='string' name='[cam]' role='dimension' type='nominal' />
+      <column caption='Cb' datatype='string' name='[cb]' role='dimension' type='nominal' />
+      <column caption='Cdm' datatype='string' name='[cdm]' role='dimension' type='nominal' />
+      <column caption='Cf' datatype='string' name='[cf]' role='dimension' type='nominal' />
+      <column caption='Club' datatype='string' name='[club]' role='dimension' type='nominal' />
+      <column caption='Cm' datatype='string' name='[cm]' role='dimension' type='nominal' />
+      <column caption='Composure' datatype='integer' name='[composure]' role='measure' type='quantitative' />
+      <column caption='Coste' datatype='integer' name='[coste]' role='measure' type='quantitative' />
+      <column caption='Crossing' datatype='integer' name='[crossing]' role='measure' type='quantitative' />
+      <column caption='Curve' datatype='integer' name='[curve]' role='measure' type='quantitative' />
+      <column caption='Def' datatype='integer' name='[def]' role='measure' type='quantitative' />
+      <column caption='Dri' datatype='integer' name='[dri]' role='measure' type='quantitative' />
+      <column caption='Dribbling' datatype='integer' name='[dribbling]' role='measure' type='quantitative' />
+      <column caption='Eur Release Clause' datatype='string' name='[eur_release_clause]' role='dimension' type='nominal' />
+      <column caption='Eur Value' datatype='real' name='[eur_value]' role='measure' type='quantitative' />
+      <column caption='Eur Wage' datatype='real' name='[eur_wage]' role='measure' type='quantitative' />
+      <column caption='Finishing' datatype='integer' name='[finishing]' role='measure' type='quantitative' />
+      <column caption='Free Kick Accuracy' datatype='integer' name='[free_kick_accuracy]' role='measure' type='quantitative' />
+      <column caption='Gk' datatype='string' name='[gk]' role='dimension' type='nominal' />
+      <column caption='Gk Diving' datatype='integer' name='[gk_diving]' role='measure' type='quantitative' />
+      <column caption='Gk Handling' datatype='integer' name='[gk_handling]' role='measure' type='quantitative' />
+      <column caption='Gk Kicking' datatype='integer' name='[gk_kicking]' role='measure' type='quantitative' />
+      <column caption='Gk Positioning' datatype='integer' name='[gk_positioning]' role='measure' type='quantitative' />
+      <column caption='Gk Reflexes' datatype='integer' name='[gk_reflexes]' role='measure' type='quantitative' />
+      <column caption='Heading Accuracy' datatype='integer' name='[heading_accuracy]' role='measure' type='quantitative' />
+      <column caption='Height Cm' datatype='integer' name='[height_cm]' role='measure' type='quantitative' />
+      <column caption='Interceptions' datatype='integer' name='[interceptions]' role='measure' type='quantitative' />
+      <column caption='International Reputation' datatype='integer' name='[international_reputation]' role='measure' type='quantitative' />
+      <column caption='Jumping' datatype='integer' name='[jumping]' role='measure' type='quantitative' />
+      <column caption='Lam' datatype='string' name='[lam]' role='dimension' type='nominal' />
+      <column caption='Lb' datatype='string' name='[lb]' role='dimension' type='nominal' />
+      <column caption='Lcb' datatype='string' name='[lcb]' role='dimension' type='nominal' />
+      <column caption='Lcm' datatype='string' name='[lcm]' role='dimension' type='nominal' />
+      <column caption='Ldm' datatype='string' name='[ldm]' role='dimension' type='nominal' />
+      <column caption='League' datatype='string' name='[league]' role='dimension' type='nominal' />
+      <column caption='Lf' datatype='string' name='[lf]' role='dimension' type='nominal' />
+      <column caption='Lm' datatype='string' name='[lm]' role='dimension' type='nominal' />
+      <column caption='Long Passing' datatype='integer' name='[long_passing]' role='measure' type='quantitative' />
+      <column caption='Long Shots' datatype='integer' name='[long_shots]' role='measure' type='quantitative' />
+      <column caption='Ls' datatype='string' name='[ls]' role='dimension' type='nominal' />
+      <column caption='Lw' datatype='string' name='[lw]' role='dimension' type='nominal' />
+      <column caption='Lwb' datatype='string' name='[lwb]' role='dimension' type='nominal' />
+      <column caption='Marking' datatype='integer' name='[marking]' role='measure' type='quantitative' />
+      <column caption='Mercado' datatype='string' name='[mercado]' role='dimension' type='nominal' />
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column caption='Nationality' datatype='string' name='[nationality]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column caption='Nuevo Club' datatype='string' name='[nuevoClub]' role='dimension' type='nominal' />
+      <column caption='Overall' datatype='integer' name='[overall]' role='measure' type='quantitative' />
+      <column caption='Pac' datatype='integer' name='[pac]' role='measure' type='quantitative' />
+      <column caption='Pas' datatype='integer' name='[pas]' role='measure' type='quantitative' />
+      <column caption='Penalties' datatype='integer' name='[penalties]' role='measure' type='quantitative' />
+      <column caption='Phy' datatype='integer' name='[phy]' role='measure' type='quantitative' />
+      <column caption='Positioning' datatype='integer' name='[positioning]' role='measure' type='quantitative' />
+      <column caption='Potential' datatype='integer' name='[potential]' role='measure' type='quantitative' />
+      <column caption='Preferred Foot' datatype='string' name='[preferred_foot]' role='dimension' type='nominal' />
+      <column caption='Ram' datatype='string' name='[ram]' role='dimension' type='nominal' />
+      <column caption='Rb' datatype='string' name='[rb]' role='dimension' type='nominal' />
+      <column caption='Rcb' datatype='string' name='[rcb]' role='dimension' type='nominal' />
+      <column caption='Rcm' datatype='string' name='[rcm]' role='dimension' type='nominal' />
+      <column caption='Rdm' datatype='string' name='[rdm]' role='dimension' type='nominal' />
+      <column caption='Reactions' datatype='integer' name='[reactions]' role='measure' type='quantitative' />
+      <column caption='Rf' datatype='string' name='[rf]' role='dimension' type='nominal' />
+      <column caption='Rm' datatype='string' name='[rm]' role='dimension' type='nominal' />
+      <column caption='Rs' datatype='string' name='[rs]' role='dimension' type='nominal' />
+      <column caption='Rw' datatype='string' name='[rw]' role='dimension' type='nominal' />
+      <column caption='Rwb' datatype='string' name='[rwb]' role='dimension' type='nominal' />
+      <column caption='Sho' datatype='integer' name='[sho]' role='measure' type='quantitative' />
+      <column caption='Short Passing' datatype='integer' name='[short_passing]' role='measure' type='quantitative' />
+      <column caption='Shot Power' datatype='integer' name='[shot_power]' role='measure' type='quantitative' />
+      <column caption='Sliding Tackle' datatype='integer' name='[sliding_tackle]' role='measure' type='quantitative' />
+      <column caption='Sprint Speed' datatype='integer' name='[sprint_speed]' role='measure' type='quantitative' />
+      <column caption='St' datatype='string' name='[st]' role='dimension' type='nominal' />
+      <column caption='Stamina' datatype='integer' name='[stamina]' role='measure' type='quantitative' />
+      <column caption='Standing Tackle' datatype='integer' name='[standing_tackle]' role='measure' type='quantitative' />
+      <column caption='Strength' datatype='integer' name='[strength]' role='measure' type='quantitative' />
+      <column caption='Ultimo Club' datatype='string' name='[ultimoClub]' role='dimension' type='nominal' />
+      <column caption='Vision' datatype='integer' name='[vision]' role='measure' type='quantitative' />
+      <column caption='Volleys' datatype='integer' name='[volleys]' role='measure' type='quantitative' />
+      <column caption='Weak Foot' datatype='integer' name='[weak_foot]' role='measure' type='quantitative' />
+      <column caption='Weight Kg' datatype='integer' name='[weight_kg]' role='measure' type='quantitative' />
+      <column caption='Work Rate Att' datatype='string' name='[work_rate_att]' role='dimension' type='nominal' />
+      <column caption='Work Rate Def' datatype='string' name='[work_rate_def]' role='dimension' type='nominal' />
+      <column-instance column='[gk]' derivation='None' name='[none:gk:nk]' pivot='key' type='nominal' />
+      <column-instance column='[league]' derivation='None' name='[none:league:nk]' pivot='key' type='nominal' />
+      <column-instance column='[nationality]' derivation='None' name='[none:nationality:nk]' pivot='key' type='nominal' />
+      <column-instance column='[nuevoClub]' derivation='None' name='[none:nuevoClub:nk]' pivot='key' type='nominal' />
+      <column-instance column='[work_rate_att]' derivation='None' name='[none:work_rate_att:nk]' pivot='key' type='nominal' />
+      <column-instance column='[work_rate_def]' derivation='None' name='[none:work_rate_def:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.556936' measure-ordering='alphabetic' measure-percentage='0.443064' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:nuevoClub:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;AC Milan&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Aston Villa&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Boca Juniors&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;CD Godoy Cruz&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;CSKA Moscú&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;FC Augsburg&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;FC Sion&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Grasshoppers&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Ipswich&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Lech Poznan&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Monaco&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;PAOK&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Racing Club&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Rubin Kazan&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Slavia Praha&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Tottenham&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Vitesse&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;1.FC K&apos;lautern&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Al-Wahda&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Benevento&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Bursaspor&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Colorado&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;E. de Francfort&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;FC Liverpool&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Foggia&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;HN Jianye&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;KRC Genk&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Malmö FF&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Nottm Forest&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Preston NE&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Reims&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;SD Huesca&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Stoke City&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;V-V. Nagasaki&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;1.FSV Mainz 05&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Argentinos&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;BJ Renhe&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Cagliari&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Cremonese&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Everton&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;FC Metz&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Genoa CFC&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Huracán&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Lanús&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Middlesbrough&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Olymp. Lyonnais&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Pyramids FC&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Rostov&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Sheff Wed&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Tigres UANL&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;VfB Stuttgart&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Ahli&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Atlanta United&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Bournemouth&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Celtic FC&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Dijon&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;FC Basel&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;FC Utrecht&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Hajduk Split&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Juventus&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;León&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Nagoya Grampus&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;PEC Zwolle&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;RB Leipzig&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Santos FC&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Sparta Praha&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;UC Sampdoria&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;West Ham U23&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;AEK Atenas&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Atalanta&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Bolton&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;CD Leganés&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;CSKA Sofia&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;FC Barcelona&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;FC Southampton&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Grêmio&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Jagiellonia&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Leeds&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Monterrey&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Paris SG&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Rangers FC&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Saint Gilloise&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;SM Caen&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Toulouse&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Watford&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Aalborg BK&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Arm. Bielefeld&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;BJ Sinobo Guoan&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Cardiff&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Crotone&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;F. Düsseldorf&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;FC Nantes&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Getafe CF&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;IK Start&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Lausanne-Sport&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Midtjylland&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Olympiacos FC&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Qarabag Agdam&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Royal Amberes&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Sheffield Utd.&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;TJ Teda&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;VfL Wolfsburg&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Al-Ettifaq&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Bayern Múnich&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Brøndby IF&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Colo Colo&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Dynamo Kyiv&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;FC Groningen&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Flamengo&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Hertha Berlin&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Konyaspor&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Ludogorets&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Norrköping&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Piast Gliwice&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Real Sociedad&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;SCO Angers&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;St-Étienne&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Urawa Reds&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;ZJ Greentown&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;1.FC Köln&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Alanyaspor&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Benfica&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;CA Osasuna&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Columbus Crew&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Erzgebirge Aue&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;FC Lorient&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Frosinone&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Holstein Kiel&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;KV Kortrijk&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Man Utd.&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Odense BK&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Pro Vercelli&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Rennes&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Sevilla FC&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;SV Darmstadt 98&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Valencia CF&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Al Duhail&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Basaksehir&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Brighton&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Club Brugge&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;DL Yifang&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;FC Empoli&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Ferencváros&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Heerenveen&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Kansas&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Los Angeles FC&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Nîmes Olympique&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Peterborough&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Real Betis&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;SC Freiburg&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Sporting CP&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Union Berlin&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Wolverhampton&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;AC Horsens&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;AS Roma&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Blackburn&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;CC Yatai&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Cruzeiro&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;FC Arsenal&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;FC Porto&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Girona FC&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Independiente&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Lazio&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Millonarios&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Orlando City SC&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Quakes&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;RSC Anderlecht&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Sint-Truiden&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Toluca&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Villarreal CF&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;AJ Auxerre&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Atlético Madrid&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Braga&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Chelsea&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Dinamo Moskva&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;FC Bologna&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;FC Viitorul&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Hamburgo&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Juventus U19&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Levante UD&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Nasr&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Peñarol&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;RB Salzburg&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Santos Laguna&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Spartak Moskva&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;UD Las Palmas&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;West Ham Utd.&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Ajax B&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Austria Viena&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Brentford&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Chievo Verona&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Dinamo Zagreb&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;FC Burnley&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;FC Zürich&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Hannover 96&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Juventus U23&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Levski Sofia&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Necaxa&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Perugia&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;RC Deportivo&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Sassuolo&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Spezia Calcio&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Udinese Calcio&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;WH Zall&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Al-Batin&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Bay. Leverkusen&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Bristol City&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Club Tijuana&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Dynamo Dresden&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;FC Fulham&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Fiorentina&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Hellas Verona&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Kasimpasa&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;LOSC Lille&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Nordsjælland&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Philadelphia&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Real Madrid&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;SC Paderborn&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;SSC Napoli&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Ural&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Zenit S-Pb&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Al-Jazira&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;BB Erzurumspor&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;BSC Young Boys&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Colón&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;E. Braunschweig&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;FC Ingolstadt&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Fleetwood&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Hilal&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Krasnodar&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Málaga CF&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Norwich&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Pogon Szczecin&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Real Valladolid&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;SD Eibar&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Standard Lieja&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;US Palermo&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Zulte Waregem&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;AFC Ajax&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Athletic&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Bor. Dortmund&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;CD Tenerife&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Defensa&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;FC Barcelona B&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;FC St. Gallen&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Greuther Fürth&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;JEF Utd. Chiba&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Leicester City&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Montpellier&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Parma&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Rapid Viena&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Salernitana&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Sounders FC&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Trabzonspor&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Werder Bremen&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;AC Le Havre&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Ascoli&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Boavista&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;CD Cruz Azul&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Crystal Palace&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;FC Astana&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;FC Schalke 04&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Göztepe&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Inter de Milán&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Lecce&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Millwall&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Oxford United&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;R. Strasbourg&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;RSC Charleroi&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;SKA Khabarovsk&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Torino&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Vit. Guimarães&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;1.FC Magdeburg&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Alavés&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Besiktas&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;CA Rosario&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;CQ Dangdai Lif.&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Espanyol&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;FC Lugano&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;G. Bordeaux&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Huddersfield&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;KV Mechelen&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Manchester City&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;OGC Nice&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;PSV Eindhoven&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;River Plate&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Shakhtar D.&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Swansea City&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Vélez Sarsfield&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Akhmat Grozny&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;AZ Alkmaar&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Brescia&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Cincinnati&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Djurgarden&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;FC Copenhague&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Fenerbahce&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;HB CFFC&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;KAA Gent&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Loko Moskva&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Newcastle Utd.&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Pescara&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Reading&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;SC Amiens&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Sporting&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;UNAM Pumas&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Wigan&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;AFC Sunderland&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Atl. Nacional&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Bor. M&apos;gladbach&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Celta de Vigo&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Derby&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;FC Barnsley&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;FC St. Pauli&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Guingamp&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;JS Suning&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Lens&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Morelia&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Partizan&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Rayo Vallecano&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;San Luis&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;SPAL&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;TSG Hoffenheim&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;West Brom&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;1.FC Nürnberg&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;América&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Birmingham&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;CA Talleres&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Cracovia Kraków&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Estrella Roja&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;FC Luzern&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Galatasaray&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Hull City&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;KV Oostende&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Marseille&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;OH Leuven&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Puebla FC&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Roma U19&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Sharjah FC&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Termalica&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Venezia&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:gk:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;73&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;63&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;89&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;69&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;77&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;74&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;70&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;83&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;65&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;NA&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;81&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;71&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;78&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;79&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;82&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;85&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;75&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;72&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;66&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;80&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;76&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;68&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:work_rate_att:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Medium&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Low&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;High&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:work_rate_def:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Medium&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Low&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;High&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:nationality:nk]' palette='tableau20_10_0' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;DR Congo&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Egypt&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;United States&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Albania&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Algeria&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Cuba&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Serbia&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Sudan&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Australia&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Cameroon&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Iceland&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Norway&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Trinidad &amp; Tobago&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Uruguay&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Cape Verde&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Germany&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Libya&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Scotland&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Zambia&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Burkina Faso&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;England&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Japan&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Republic of Ireland&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Austria&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Colombia&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Iran&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Paraguay&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Tunisia&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Costa Rica&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Montenegro&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Portugal&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;South Africa&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Argentina&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Curacao&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Guinea Bissau&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;New Zealand&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Spain&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Sweden&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Georgia&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Ivory Coast&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Mali&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Slovakia&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Denmark&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Iraq&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Peru&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Chad&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;FYR Macedonia&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Ghana&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Lithuania&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Senegal&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Zimbabwe&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Chile&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Guinea&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Luxembourg&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Comoros&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Mexico&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Netherlands&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Slovenia&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Croatia&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Greece&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Morocco&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Russia&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Equatorial Guinea&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;France&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Korea Republic&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Romania&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Venezuela&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Bosnia Herzegovina&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Dominican Republic&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Ecuador&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Poland&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Ukraine&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Angola&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Belgium&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Cyprus&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Honduras&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Nigeria&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Switzerland&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;China PR&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Gambia&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Italy&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Madagascar&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Sierra Leone&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Canada&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Finland&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Gabon&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Kosovo&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Wales&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Brazil&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Czech Republic&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Hungary&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Northern Ireland&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Togo&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Turkey&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:league:nk]' palette='tableau20_10_0' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;English League One&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Rep. Ireland Premier Division&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Spanish Primera División&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Argentinian Superliga&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;English Championship&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Italian Serie B&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Colombian Primera A&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Italian Serie A&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;NA&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;English League Two&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Swiss Super League&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Czech Liga&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Norwegian Eliteserien&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Portuguese Primeira Liga&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Holland Eredivisie&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;USA Major League Soccer&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Australian A-League&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;English Premier League&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Japanese J1 League&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Danish Superliga&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Polish Ekstraklasa&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Russian Premier League&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;French Ligue 2&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Spanish Segunda División&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;German 2. Bundesliga&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Swedish Allsvenskan&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Greek Super League&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Saudi Professional League&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Turkish Süper Lig&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Scottish Premiership&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Austrian Bundesliga&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;French Ligue 1&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Korean K League Classic&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;German 3. Liga&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Finnish Veikkausliiga&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Ukrainian Premier League&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Belgian First Division A&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;German Bundesliga&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Mexican Liga MX&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;España&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Ventas por Liga'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Raw' name='federated.1kpzaj91vfurcf1feytby0uj5vzy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1kpzaj91vfurcf1feytby0uj5vzy'>
+            <column-instance column='[name]' derivation='Attribute' name='[attr:name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[overall]' derivation='Attribute' name='[attr:overall:qk]' pivot='key' type='quantitative' />
+            <column caption='Coste' datatype='integer' name='[coste]' role='measure' type='quantitative' />
+            <column caption='League' datatype='string' name='[league]' role='dimension' type='nominal' />
+            <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[coste]' derivation='None' name='[none:coste:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[league]' derivation='None' name='[none:league:nk]' pivot='key' type='nominal' />
+            <column caption='Overall' datatype='integer' name='[overall]' role='measure' type='quantitative' />
+            <column-instance column='[coste]' derivation='Sum' name='[sum:coste:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:coste:qk]' included-values='in-range-or-null'>
+            <min>20138723</min>
+            <max>135000000</max>
+          </filter>
+          <slices>
+            <column>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:coste:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[sum:coste:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[sum:coste:qk]' />
+              <text column='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:league:nk]' />
+              <color column='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:league:nk]' />
+              <lod column='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[attr:name:nk]' />
+              <lod column='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[attr:overall:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='Ventas por Mercado'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Raw' name='federated.1kpzaj91vfurcf1feytby0uj5vzy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1kpzaj91vfurcf1feytby0uj5vzy'>
+            <column caption='Coste' datatype='integer' name='[coste]' role='measure' type='quantitative' />
+            <column caption='Mercado' datatype='string' name='[mercado]' role='dimension' type='nominal' />
+            <column-instance column='[coste]' derivation='None' name='[none:coste:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[mercado]' derivation='None' name='[none:mercado:nk]' pivot='key' type='nominal' />
+            <column-instance column='[preferred_foot]' derivation='None' name='[none:preferred_foot:nk]' pivot='key' type='nominal' />
+            <column caption='Preferred Foot' datatype='string' name='[preferred_foot]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:mercado:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:coste:qk]</rows>
+        <cols>([federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:mercado:nk] / [federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:preferred_foot:nk])</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Ventas por Nacionalidad'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Raw' name='federated.1kpzaj91vfurcf1feytby0uj5vzy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1kpzaj91vfurcf1feytby0uj5vzy'>
+            <column-instance column='[name]' derivation='Attribute' name='[attr:name:nk]' pivot='key' type='nominal' />
+            <column caption='Coste' datatype='integer' name='[coste]' role='measure' type='quantitative' />
+            <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column caption='Nationality' datatype='string' name='[nationality]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column-instance column='[coste]' derivation='None' name='[none:coste:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[nationality]' derivation='None' name='[none:nationality:nk]' pivot='key' type='nominal' />
+            <column-instance column='[coste]' derivation='Sum' name='[sum:coste:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:coste:qk]' included-values='in-range'>
+            <min>20092594</min>
+            <max>135000000</max>
+          </filter>
+          <columns>
+            <shelf-sort direction='DESC' measure-to-sort-by='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[sum:coste:qk]'>
+              <dimensions-to-sort>
+                <dimension>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:nationality:nk]</dimension>
+              </dimensions-to-sort>
+            </shelf-sort>
+          </columns>
+          <slices>
+            <column>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:coste:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:nationality:nk]' />
+              <tooltip column='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[attr:name:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[sum:coste:qk]</rows>
+        <cols>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:nationality:nk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Ventas por Nacionalidad'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='175'>
+            <card pane-specification-id='2' param='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:nationality:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:coste:qk]</field>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:name:nk]</field>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:nationality:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Ventas por Mercado'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='175'>
+            <card pane-specification-id='0' param='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:mercado:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:mercado:nk]</field>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:preferred_foot:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' maximized='true' name='Ventas por Liga'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='175'>
+            <card param='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:coste:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:league:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:league:nk]</field>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:name:nk]</field>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:nuevoClub:nk]</field>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:ram:nk]</field>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[none:work_rate_def:nk]</field>
+            <field>[federated.1kpzaj91vfurcf1feytby0uj5vzy].[sum:coste:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Ventas por Liga' width='192'>
+      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
+      QmCC
+    </thumbnail>
+    <thumbnail height='192' name='Ventas por Mercado' width='192'>
+      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
+      2ZoMgGRr/x9sd0xY8dHt0gAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Ventas por Nacionalidad' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
