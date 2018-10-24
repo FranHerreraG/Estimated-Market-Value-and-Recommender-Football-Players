@@ -248,4 +248,26 @@ sum(df$ID>0)
 rm(df_aux,df_aux2,Encontrados,Fifa_aux,duplicados,FIFANAMES,FUTNAMES)
 rm(h,i,IDF_Borrar,IDF_malos,j,jugador,k,N_Fichajes,N_Jugadores,N_Perdidos)
 
-write.csv2(df,"Data/Fichajes18.csv")
+write.csv2(df,"Data/Fichajes18.csv", row.names=FALSE)
+
+#Juntamos toda la info en una sola tabla RAW
+
+Raw <- FIFA18v1 %>% 
+  left_join(df[c("ultimoClub", "nuevoClub", "coste", "mercado", "ID")], by = c("ID"="ID")) %>% 
+  filter(!is.na(mercado))
+
+summary(Raw[c("club","age","overall","potential","coste","eur_value","eur_release_clause")])
+
+#Creamos una tabla con los campos potenciamente importantes para visualizar en TABLEAU
+
+Raw_tableau <- Raw[c("ID","name","club","league","birth_date","height_cm","weight_kg","nationality","eur_value","eur_wage",
+         "eur_release_clause","overall","potential","pac","sho","pas","dri","def","phy","international_reputation",
+         "weak_foot","work_rate_att","work_rate_def","preferred_foot","crossing","finishing","heading_accuracy",
+         "short_passing","volleys","dribbling","curve","free_kick_accuracy","long_passing","ball_control","acceleration",
+         "sprint_speed","agility","reactions","balance","shot_power","jumping","stamina","strength","long_shots",
+         "aggression","interceptions","positioning","vision","penalties","composure","marking","standing_tackle",
+         "sliding_tackle","gk_diving","gk_handling","gk_kicking","gk_positioning","gk_reflexes","rs","rw","rf","ram",
+         "rcm","rm","rdm","rcb","rb","rwb","st","lw","cf","cam","cm","lm","cdm","cb","lb","lwb","ls","lf","lam","lcm",
+         "ldm","lcb","gk","ultimoClub","nuevoClub","coste","mercado")]
+
+write.csv2(Raw_tableau,"Data/Tableau/Raw.csv", row.names=FALSE)
