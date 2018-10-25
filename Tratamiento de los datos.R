@@ -1,8 +1,5 @@
 library(readr)
 library(dplyr)
-library(ggplot2)
-library(gridExtra)
-library(tabplot) #mirar cran tableplot(fifa18[,1:10], cex = 1.8)
 
 df <- read_delim("Data/Fichajes18.csv", ";", 
                  escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
@@ -25,6 +22,10 @@ compras <- df %>%
   mutate(coste = coste/1000000) %>% 
   summarise(media = mean(coste), mediana = median(coste),total = sum(coste),jugadores = n()) %>% 
   arrange(desc(total))
+
+#Vemos que Equipos como Monaco y Roma son los que más han ingresado y Liverpool y Juventus los que más han gastado
+
+
 
 
 

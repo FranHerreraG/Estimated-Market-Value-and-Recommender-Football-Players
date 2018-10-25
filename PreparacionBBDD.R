@@ -141,6 +141,7 @@ head(perdidos_2)
 
 df2=data.frame("IDF"=perdidos_2$IDF,"ID"=0, "Name"=perdidos_2$Name,"Real"=0)
 (N_Perdidos = length(perdidos_2[[1]]))
+#Ahora tenemos 406 IDFs Perdidos
 
 i=1
 j=1
@@ -170,7 +171,7 @@ Encontrados_2 <- read_delim("Data/Encontrados_2.csv",
                             trim_ws = TRUE)
 sum(Encontrados_2$ID>0)
 
-#Añadimos 64 Perdidos más
+#Añadimos 65 Perdidos más
 #Sanity Check
 table(Encontrados_2$ID)[table(Encontrados_2$ID)>1]
 
@@ -214,10 +215,11 @@ df_aux %>%
 Fifa_aux = FIFA18v1[,1:4] %>%
   filter(ID %in% duplicados)
 
-IDF_malos <- c(300,390,561,1166,1245,1280,1341)
+IDF_malos <- c(14,300,390,561,1166,1245,1280,1341)
 
 #Buscamos manualmente los IDs correspondientes a los mal catalogados IDFs
-Encontrados <- data.frame(IDF=c(300,390,1166,1280),ID=c(178311,182882,189795,205654))
+#El ID de Jorginho (14) está mal y aprovechamos para cambiarlo aqui.
+Encontrados <- data.frame(IDF=c(300,390,1166,1280,14),ID=c(178311,182882,189795,205654,205498))
 IDF_Borrar <- c(561,1245,1341) #IDFs no identificados
 
 #Corregimos los IDs con los buenos.
@@ -253,12 +255,16 @@ write.csv2(df,"Data/Fichajes18.csv", row.names=FALSE)
 #Juntamos toda la info en una sola tabla RAW
 
 Raw <- FIFA18v1 %>% 
-  left_join(df[c("ultimoClub", "nuevoClub", "coste", "mercado", "ID")], by = c("ID"="ID")) %>% 
-  filter(!is.na(mercado))
+  left_join(df[c("ultimoClub", "nuevoClub", "coste", "mercado", "ID")], by = c("ID"="ID"))
+
 
 summary(Raw[c("club","age","overall","potential","coste","eur_value","eur_release_clause")])
+write.csv2(Raw,"Data/Raw.csv", row.names=FALSE)
 
 #Creamos una tabla con los campos potenciamente importantes para visualizar en TABLEAU
+
+Raw_tableau = Raw %>% 
+filter(!is.na(mercado))
 
 Raw_tableau <- Raw[c("ID","name","club","league","birth_date","height_cm","weight_kg","nationality","eur_value","eur_wage",
          "eur_release_clause","overall","potential","pac","sho","pas","dri","def","phy","international_reputation",
@@ -270,4 +276,15 @@ Raw_tableau <- Raw[c("ID","name","club","league","birth_date","height_cm","weigh
          "rcm","rm","rdm","rcb","rb","rwb","st","lw","cf","cam","cm","lm","cdm","cb","lb","lwb","ls","lf","lam","lcm",
          "ldm","lcb","gk","ultimoClub","nuevoClub","coste","mercado")]
 
-write.csv2(Raw_tableau,"Data/Tableau/Raw.csv", row.names=FALSE)
+write.csv2(Raw_tableau,"Data/Tableau/RawT.csv", row.names=FALSE)
+
+#Creamos dos tablas Test y Train para los procesos ML
+
+set.seed(1234)
+train <- Raw %>% 
+  filter(!is.na(mercado)) %>% 
+  sample_frac(.70)
+sum(train$coste)
+test  <- anti_join(Raw%>%filter(!is.na(mercado)), train, by = 'ID')
+sum(test$coste)
+
