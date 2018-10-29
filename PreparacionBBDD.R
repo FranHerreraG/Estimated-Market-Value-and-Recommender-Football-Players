@@ -277,14 +277,3 @@ Raw_tableau <- Raw[c("ID","name","club","league","birth_date","height_cm","weigh
          "ldm","lcb","gk","ultimoClub","nuevoClub","coste","mercado")]
 
 write.csv2(Raw_tableau,"Data/Tableau/RawT.csv", row.names=FALSE)
-
-#Creamos dos tablas Test y Train para los procesos ML
-
-set.seed(1234)
-train <- Raw %>% 
-  filter(!is.na(mercado)) %>% 
-  sample_frac(.70)
-sum(train$coste)
-test  <- anti_join(Raw%>%filter(!is.na(mercado)), train, by = 'ID')
-sum(test$coste)
-
