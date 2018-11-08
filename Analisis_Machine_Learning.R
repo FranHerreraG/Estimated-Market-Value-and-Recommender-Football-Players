@@ -44,7 +44,7 @@ CorA <- cor(RawA, method = c("pearson", "kendall", "spearman"))
 
 write.csv2(CorA,"Data/Machine_Learning/CorA.csv", row.names=FALSE)
 
-#Elegimos las variables relevantes y las que tienen una alta correlación entre si las unificamos.
+#Elegimos las variables relevantes y las que tienen una alta correlación entre si y creamos nuevas variables que se integren.
 rm(RawA,CorA)
 
 Raw = Raw %>% 
@@ -61,7 +61,8 @@ Raw = Raw %>%
          FUE = mean(phy,strength),
          IMC = weight_kg/(height_cm/100)^2,
          WORK_ATK = as.numeric(work_rate_att),
-         WORK_DEF = as.numeric(work_rate_def))
+         WORK_DEF = as.numeric(work_rate_def),
+         coste = coste/1000000)
 
 df = Raw %>% select(ID,special,age,overall,potential,international_reputation,skill_moves,weak_foot,
                     WORK_ATK,WORK_DEF,jumping,POR,DEF,SPE,BAL,MEN,FUE,IMC,coste)
@@ -81,13 +82,95 @@ train = select(train,-one_of(c("ID")))
 #Tenemos 800 futbolistas para entrenar y 220 para testear
 summary(train$coste)
 
+
 #Guardamos las tablas por si las necesitasemos recuperar.
 write.csv2(train,"Data/Machine_Learning/Train.csv", row.names=FALSE)
 write.csv2(test,"Data/Machine_Learning/Test.csv", row.names=FALSE)
 
 #Modelos
 
-modeloLogit=glm(coste~ ., data=train,family=poisson())
-summary(modeloLogit)
 
+modelo1=glm(coste~ ., data=train[,-1],family=gaussian(link = "identity"))
+summary(modelo1)
+
+modeloStep=step(modelo1,direction="both",trace=1)
+anova(modelo1,modeloStep)
+
+#Nos quedamos con el modelo eficientado por la funcion Step
+modeloTop=glm(coste ~ age + overall + international_reputation + WORK_DEF + POR + BAL + MEN,
+                  data=train,family=gaussian(link = "identity"))
+summary(modeloTop)
+
+#Quitamos WORK_DEF porque no sale significativa
+modeloTop=glm(coste ~ age + overall + international_reputation + POR + BAL + MEN,
+              data=train,family=gaussian(link = "identity"))
+summary(modeloTop)
+
+
+#Creamos una tabla con todas las predicciones
+Predicciones= data.frame(test$coste)
+colnames(Predicciones)="coste"
+
+#Comprobamos el MSE(mean square error) de cada modelo
+Predicciones$PredictM1=round(predict(modelo1,test),4)
+(MSEM1 =mean((Predicciones$coste - Predicciones$PredictM1)^2))
+
+Predicciones$PredictMStep=round(predict(modeloStep,test),4)
+(MSEMStep =mean((Predicciones$coste - Predicciones$PredictMStep)^2))
+
+Predicciones$PredictMTop=round(predict(modeloTop,test),4)
+(MSEMTop =mean((Predicciones$coste - Predicciones$PredictMTop)^2))
+
+#Si Ploteamos una regresion polinomica podemos encontrar un modelo que ajuste mejor con nuestros datos
+
+VarPlot = c("special","overall","potential","POR","DEF","BAL","MEN","SPE","IMC")
+repcoste=rep(train$coste,length(VarPlot))
+
+train[,(colnames(train)%in%VarPlot)] %>% 
+  keep(is.numeric) %>% 
+  gather() %>% 
+  mutate(coste=repcoste) %>% 
+  ggplot(aes(value,coste)) +
+  facet_wrap(~ key, scales = "free") +
+  geom_point(colour = c("firebrick3")) +
+  stat_smooth(method = "lm", formula = y ~ poly(x, 3), color = "black")
+
+#Variamos el numero de puntos del polinomio
+train[,(colnames(train)%in%VarPlot)] %>% 
+  keep(is.numeric) %>% 
+  gather() %>% 
+  mutate(coste=repcoste) %>% 
+  ggplot(aes(value,coste)) +
+  facet_wrap(~ key, scales = "free") +
+  geom_point(colour = c("firebrick3")) +
+  stat_smooth(method = "lm", formula = y ~ poly(x, 4), color = "black")
+
+#vemos que con 4 mejora y que las mejores opciones son para las variables overall MEN ,special y potential
+
+#Modelo poly para MEN
+modeloPolyMEN = lm(coste ~ poly(MEN,4),data = train)
+summary(modeloPolyMEN)
+Predicciones$PredictMPMEN=round(predict(modeloPolyMEN,test),4)
+(MSEMEN =mean((Predicciones$coste - Predicciones$PredictMPMEN)^2))
+
+#Modelo poly para overall
+modeloPolyOVE = lm(coste ~ poly(overall,4),data = train)
+summary(modeloPolyOVE)
+Predicciones$PredictMPOVE=round(predict(modeloPolyOVE,test),4)
+(MSEoverall =mean((Predicciones$coste - Predicciones$PredictMPOVE)^2))
+
+#Modelo poly para special
+modeloPolySPE = lm(coste ~ poly(special,4),data = train)
+summary(modeloPolySPE)
+Predicciones$PredictMPSPE=round(predict(modeloPolySPE,test),4)
+(MSEspecial =mean((Predicciones$coste - Predicciones$PredictMPSPE)^2))
+
+#Modelo poly para potential
+modeloPolyPOT = lm(coste ~ poly(potential,4),data = train)
+summary(modeloPolyPOT)
+Predicciones$PredictMPPOT=round(predict(modeloPolyPOT,test),4)
+(MSEpotential = mean((Predicciones$coste - Predicciones$PredictMPPOT)^2))
+
+#Vemos que el MSE (mean square error) más pequeños nos lo da el modelo Poly con la variable potential
+data.frame(MSEMEN,MSEspecial,MSEoverall,MSEM1,MSEMStep,MSEMTop,MSEpotential)
 
