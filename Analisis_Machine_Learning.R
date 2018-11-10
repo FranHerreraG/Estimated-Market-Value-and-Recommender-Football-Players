@@ -3,6 +3,7 @@ library(readr)
 library(dplyr)
 library(tidyverse)
 library(lubridate)
+library(fmsb)
 
 Raw <- read_delim("Data/Raw.csv", ";", 
                  escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
@@ -171,6 +172,80 @@ summary(modeloPolyPOT)
 Predicciones$PredictMPPOT=round(predict(modeloPolyPOT,test),4)
 (MSEpotential = mean((Predicciones$coste - Predicciones$PredictMPPOT)^2))
 
-#Vemos que el MSE (mean square error) más pequeños nos lo da el modelo Poly con la variable potential
-data.frame(MSEMEN,MSEspecial,MSEoverall,MSEM1,MSEMStep,MSEMTop,MSEpotential)
 
+#Combinamos la regresion TOP con Poly 
+
+modeloMP=lm(coste ~ age + overall + I(overall^2) + I(overall^3) + international_reputation + POR + BAL + MEN,
+            data=train)
+summary(modeloMP)
+Predicciones$PredictMP=round(predict(modeloMP,test),4)
+(MSETopPoly = mean((Predicciones$coste - Predicciones$PredictMP)^2))
+
+#Añadimos a el cuadrado de las mejores variables del paso Poly (overall MEN ,special y potential)
+
+modeloExtra = lm(coste ~ special + I(special^2) + I(special^3) + age + overall + I(overall^2) + I(overall^3) + 
+                   potential +  I(potential^2) + I(potential^3) + international_reputation + skill_moves +
+                   weak_foot + WORK_ATK + WORK_DEF + jumping + POR + DEF + SPE + BAL + MEN + I(MEN^2) + I(MEN^3) +
+                   FUE + IMC,
+                 data=train)
+summary(modeloExtra)
+
+#Realizamos un proceso Step para quedarnos con las variables más importantes
+
+modeloStepExtra=step(modeloExtra,direction="both",trace=1)
+anova(modeloExtra,modeloStepExtra)
+summary(modeloStepExtra)
+
+Predicciones$PredictMStepE=round(predict(modeloStepExtra,test),4)
+(MSEstepextra = mean((Predicciones$coste - Predicciones$PredictMStepE)^2))
+
+
+#Vemos que el MSE (mean square error) más pequeños nos lo da el modelo Poly con la variable potential
+data.frame(MSEMEN,MSEspecial,MSEoverall,MSEM1,MSEMStep,MSEMTop,MSEpotential,MSEstepextra)
+
+#Para saber si nuestros mejores modelos tienen multicolinealidad usamos el factor de inflacción de varianza VIF
+
+data.frame(VIF(modeloPolyPOT),VIF(modeloStepExtra))
+
+# A partir de 5 decimos que existe multicolinealidad, como en nuestro mejor modelo es 2.54 decimos que no existe multicolinealidad.
+
+
+# El modelo elegido es coste ~ special + I(special^2) + I(special^3) + age +
+# overall + I(overall^2) + I(overall^3) + potential +  I(potential^2) + I(potential^3) + 
+# WORK_DEF + DEF + SPE +  BAL + I(MEN^2)
+
+# Ahora aplicamos el modelo predictivo a la tabla DF para predecir el valor de mercado de todos los jugadores
+# incluidos los jugadores de los que ya tenemos un coste.
+
+df$ValorMdo=round(predict(modeloStepExtra,df),4)
+hist(df$ValorMdo)
+
+#Hay que forzar a que los valores de prediccion no sean negativos
+length(df$ValorMdo[df$ValorMdo<=0]) #4872
+summary(df$age[df$ValorMdo<=0])
+#Son sobretodo jugadores muy mayores, por lo que su precio se devalua mucho.
+
+#Igualamos todos a Valor de mercado 0
+df$ValorMdo[df$ValorMdo<=0]=0
+
+#Cambiamos el club actual de los jugadores fichados
+Raw <- Raw %>%
+  mutate(club=case_when(!is.na(nuevoClub)~nuevoClub,
+                        TRUE~club)) 
+
+#Juntamos df con Raw para tener todos los datos
+Variables2<-c("ID","name","full_name","club","special","age","birth_date","nationality",
+              "overall","potential","pac","sho","pas","dri","def","phy","international_reputation",
+              "POR","DEF","SPE","BAL","MEN","FUE","IMC","WORK_ATK","WORK_DEF","ValorMdo",
+              "prefers_rs","prefers_rw","prefers_rf","prefers_ram","prefers_rcm","prefers_rm",
+              "prefers_rcb","prefers_rb","prefers_rwb","prefers_st","prefers_lw","prefers_cam",
+              "prefers_lm","prefers_cdm","prefers_cb","prefers_lb","prefers_lwb","prefers_lf",
+              "prefers_lcm","prefers_ldm","prefers_lcb","prefers_gk" )
+
+df2 <-Raw %>% 
+  inner_join(df) %>%
+  select(Variables2)
+
+
+write.csv2(df2,"Data/df2.csv", row.names=FALSE)
+#Con esta tabla haremos el recomendador
