@@ -1,9 +1,8 @@
-
-library(readr)
-library(dplyr)
 library(tidyverse)
+library(corrplot)
 library(lubridate)
 library(fmsb)
+
 
 Raw <- read_delim("Data/Raw.csv", ";", 
                  escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
@@ -25,7 +24,7 @@ Raw$mercado=as.factor(Raw$mercado)
 summary(Raw[,c("body_type","work_rate_att","work_rate_def","preferred_foot","mercado")])
 
 
-Variables1 <- c("special", "age", "height_cm", "weight_kg", "eur_value", "overall", "potential", "pac",
+Variables1 <- c("special", "age", "height_cm", "weight_kg", "overall", "potential", "pac",
                 "sho", "pas", "dri", "def", "phy", "international_reputation", "skill_moves", "crossing",
                 "finishing", "heading_accuracy", "short_passing", "volleys", "dribbling", "curve",
                 "free_kick_accuracy", "long_passing", "ball_control", "acceleration", "sprint_speed",
@@ -42,8 +41,10 @@ Raw[,Variables]= as.matrix(Raw[,Variables]) %>% replace_na(0)
 RawA <- Raw[,c(Variables1,Variables)]
 
 CorA <- cor(RawA, method = c("pearson", "kendall", "spearman"))
+corrplot(CorA, method = "circle")
 
-write.csv2(CorA,"Data/Machine_Learning/CorA.csv", row.names=FALSE)
+#Guardamos la salida en un excel para trabajar mejor con los datos
+#write.csv2(CorA,"Data/Machine_Learning/CorA.csv", row.names=FALSE)
 
 #Elegimos las variables relevantes y las que tienen una alta correlación entre si y creamos nuevas variables que se integren.
 rm(RawA,CorA)
@@ -77,16 +78,13 @@ length(train[[1]])
 test  <- anti_join(df%>%filter(!is.na(coste)), train, by = 'ID')
 length(test[[1]])
 
-test = select(test,-one_of(c("ID")))
-train = select(train,-one_of(c("ID")))
-
 #Tenemos 800 futbolistas para entrenar y 220 para testear
 summary(train$coste)
 
 
 #Guardamos las tablas por si las necesitasemos recuperar.
-write.csv2(train,"Data/Machine_Learning/Train.csv", row.names=FALSE)
-write.csv2(test,"Data/Machine_Learning/Test.csv", row.names=FALSE)
+#write.csv2(train,"Data/Machine_Learning/Train.csv", row.names=FALSE)
+#write.csv2(test,"Data/Machine_Learning/Test.csv", row.names=FALSE)
 
 #Modelos
 
@@ -146,7 +144,7 @@ train[,(colnames(train)%in%VarPlot)] %>%
   geom_point(colour = c("firebrick3")) +
   stat_smooth(method = "lm", formula = y ~ poly(x, 4), color = "black")
 
-#vemos que con 4 mejora y que las mejores opciones son para las variables overall MEN ,special y potential
+#Vemos que con 4 mejora y que las mejores opciones son para las variables overall MEN ,special y potential
 
 #Modelo poly para MEN
 modeloPolyMEN = lm(coste ~ poly(MEN,4),data = train)
@@ -204,7 +202,6 @@ Predicciones$PredictMStepE=round(predict(modeloStepExtra,test),4)
 data.frame(MSEMEN,MSEspecial,MSEoverall,MSEM1,MSEMStep,MSEMTop,MSEpotential,MSEstepextra)
 
 #Para saber si nuestros mejores modelos tienen multicolinealidad usamos el factor de inflacción de varianza VIF
-
 data.frame(VIF(modeloPolyPOT),VIF(modeloStepExtra))
 
 # A partir de 5 decimos que existe multicolinealidad, como en nuestro mejor modelo es 2.54 decimos que no existe multicolinealidad.
@@ -224,6 +221,7 @@ hist(df$ValorMdo)
 length(df$ValorMdo[df$ValorMdo<=0]) #4872
 summary(df$age[df$ValorMdo<=0])
 #Son sobretodo jugadores muy mayores, por lo que su precio se devalua mucho.
+#Es asumible que su valor sea 0
 
 #Igualamos todos a Valor de mercado 0
 df$ValorMdo[df$ValorMdo<=0]=0
