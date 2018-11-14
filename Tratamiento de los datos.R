@@ -25,10 +25,10 @@ for(i in 1:length(Variables)){
 
 
 #Elegir jugadores por posicion
-TEST <- (df2[c(5,13),-c(2,3,4,7,8)])
-TRAIN <- (df2[-c(5,13),-c(2,3,4,7,8)])
+TEST <- (df2[c(1,2),-c(2,3,4,7,8)])
+TRAIN <- (df2[-c(1,2),-c(2,3,4,7,8)])
 
-#Buscamos las posiciones preferidas de los jugadores elegidos
+#Buscamos las posiciones preferidas del primer jugador elegido
 j=1
 k=0
 Prefers=c()
@@ -69,6 +69,7 @@ attr(KNN_Model, "nn.index")
 #Filtramos buscando el Id por posicion
 IDS<- TRAIN2$ID[as.vector(attr(KNN_Model, "nn.index"))]
 df2 %>% 
-  filter(ID==IDS[1]|ID==IDS[2]|ID==IDS[3]|ID==IDS[4]|ID==IDS[5]) %>% 
-  select(ID,name,age,club,overall,ValorMdo,pac,sho,pas,dri,def,phy,POR)
+  filter(ID==IDS[1]|ID==IDS[2]|ID==IDS[3]|ID==IDS[4]|ID==IDS[5]|ID==IDS[6]|ID==IDS[7]|ID==IDS[8]) %>% 
+  select(ID,name,age,club,overall,ValorMdo,pac,sho,pas,dri,def,phy,POR) %>% 
+  top_n(5)
 
