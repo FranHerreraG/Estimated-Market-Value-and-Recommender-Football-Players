@@ -1,11 +1,11 @@
 library(tidyverse)
+library(FNN)
 
-df2 <- read_delim("Data/df2.csv", ";", escape_double = FALSE, 
-                       locale = locale(encoding = "ISO-8859-1"), 
-                       trim_ws = TRUE)
+#df2 <- read.csv2("Data/df2.csv",encoding = "ISO-8859-1",dec = ",")
 
-Variables <- c("rs", "rw", "rf", "ram", "rcm", "rm", "rcb", "rb", "rwb", "st", "lw","cam",
-               "lm", "cdm", "cb", "lb", "lwb", "lf", "lcm", "ldm", "lcb", "gk")
+#Variables <- c("rs", "rw", "rf", "ram", "rcm", "rm", "rcb", "rb", "rwb", "st", "lw","cam",
+#               "lm", "cdm", "cb", "lb", "lwb", "lf", "lcm", "ldm", "lcb", "gk")
+
 i=1
 for(i in 1:length(Variables)){
 Variables[i] =  paste("prefers_",Variables[i],sep = "")
@@ -23,18 +23,53 @@ for(i in 1:length(Variables)){
   df2[,n] = converter(eval(parse( text=a )) )
 }
 
-KNN_Model = knn(df[])
 
-#EJEMPLO A REPPLICAR
-library(FNN)
-KNN_Model = knn(ma[-3,-5],ma[3,-5],ma[-3,4],k=5)
+#Elegir jugadores por posicion
+TEST <- (df2[c(1,2),-c(2,3,4,7,8)])
+TRAIN <- (df2[-c(1,2),-c(2,3,4,7,8)])
+
+#Buscamos las posiciones preferidas del primer jugador elegido
+j=1
+k=0
+Prefers=c()
+for(j in 1:length(Variables)){
+  if(TEST[c(Variables)][j]==1){
+    k=k+1
+    Prefers[k]=names(TEST[c(Variables)][j])
+  }
+}
+Prefers
+
+i=1
+POS=c()
+for(i in 1:length(Prefers)){
+POS[i]=grep(paste("^",Prefers[i],"$",sep=""), colnames(TRAIN))
+}
+POS
+
+#Filtramos segun el numero de posiciones preferidas que tengan los jugadores elegidos
+if(length(POS==1)){
+TRAIN2<- TRAIN %>% 
+  filter(TRAIN[POS[1]]==1)
+}
+if(length(POS==2)){
+  TRAIN2<- TRAIN %>% 
+    filter(TRAIN[POS[1]]==1 | TRAIN[POS[2]]==1)
+}
+if(length(POS==3)){
+  TRAIN2<- TRAIN %>% 
+    filter(TRAIN[POS[1]]==1 | TRAIN[POS[2]]==1 | TRAIN[POS[3]]==1)
+}
+
+#modelo donde nos dice que jugadores estan más cerca
+KNN_Model = knn(train = TRAIN2[,-c(1)],test = TEST[,-c(1)],cl = TRAIN2[,43],5)
 attr(KNN_Model, "nn.index")
-ma
-
-ma = cbind(ma,seq(c(1,2,3,4,5,6)))
-ma[,4] = rep(c(T,F,T),2)
-ma
 
 
-
+#Filtramos buscando el Id por posicion
+IDS<- TRAIN2$ID[as.vector(attr(KNN_Model, "nn.index"))]
+df2 %>% 
+  filter(ID==IDS[1]|ID==IDS[2]|ID==IDS[3]|ID==IDS[4]|ID==IDS[5]|ID==IDS[6]|ID==IDS[7]|ID==IDS[8]) %>% 
+  select(ID,name,age,club,overall,ValorMdo,pac,sho,pas,dri,def,phy,POR) %>% 
+  top_n(5)
 

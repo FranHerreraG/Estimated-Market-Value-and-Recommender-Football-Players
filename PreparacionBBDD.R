@@ -45,13 +45,14 @@ rm(fut,VectorBorrar,duplicados,AuxDuplicados)
 #Guardamos los nombres de los jugadores de las dos tablas
 FIFANAMES = FIFA18v1[c("ID","name","full_name","club")]
 FUTNAMES = fut2018[c("name","IDF")]
-(N_Fichajes = length(FUTNAMES[[1]]))
-(N_Jugadores = length(FIFANAMES[[1]]))
+(N_Fichajes = length(FUTNAMES[[1]]))#1364
+(N_Jugadores = length(FIFANAMES[[1]]))#17994
 
 df <- data.frame(matrix(ncol = 4, nrow = N_Fichajes))
 colnames(df) = c("IDF","ID","Name","Grupo")
 i=1
 j=1
+#Este Bucle tarda más de 11 minutos
 for(i in 1:N_Fichajes){
   for(j in 1:N_Jugadores){
     if (FUTNAMES[[1]][i] == FIFANAMES[[2]][j]){
@@ -78,12 +79,14 @@ for(i in 1:N_Fichajes){
 
 df$Grupo=as.factor(df$Grupo)
 summary(df$Grupo)
+head(df)
+#Los grupos 1 y 2 se corresponde a los jugadores que han matcheado su nombre con NAMES o FULLNAMES
 
 #Tenemos 491 fichajes perdidos, que puede que esten por otro nombre o no esten en la base de datos FIFA
-
 perdidos = df[c("IDF","Name")]%>%
             filter(df$Grupo==3)
 head(perdidos)
+#Vemos que hay jugadores que seguro estarán en la bbdd de FIFA
 
 df2=data.frame("IDF"=perdidos$IDF,"ID"=0, "Name"=perdidos$Name,"Real"=0)
 (N_Perdidos = length(perdidos[[1]]))
@@ -91,6 +94,7 @@ df2=data.frame("IDF"=perdidos$IDF,"ID"=0, "Name"=perdidos$Name,"Real"=0)
 i=1
 j=1
 k=1
+#Este bucle tarda 4 min
 for (i in 1:N_Perdidos){
   jugador = strsplit(perdidos[[2]]," ")[[i]]
   for (j in 1:length(jugador)){
@@ -104,14 +108,16 @@ for (i in 1:N_Perdidos){
     print(perdidos[[2]][i])
   }
 }
-
+#Hemos creado una tabla con el nombre de los Perdidos y los posibles Match más cercanos del Grupo 1 (Names FIFA)
 df2[1:4,1:5]
 #Pasamos los perdidos a un Excel donde le otorgaremos los ID que veamos que corresponde
-write.csv2(df2,"Data/Perdidos.csv")
+#write.csv2(df2,"Data/Perdidos.csv")
 
 Encontrados <- read_delim("Data/Encontrados.csv", 
                          ";", escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
                          trim_ws = TRUE)
+
+head(Encontrados)
 sum(Encontrados$ID>0)
 ## 85 Encontrados en la primera ronda
 
@@ -131,10 +137,10 @@ head(df_aux);tail(df_aux)
 
 df = df_aux[c("IDF","ID.x","Name.x","Grupo")]
 colnames(df)=c("IDF","ID","Name","Grupo")
-
+head(df)
 rm(df_aux,Encontrados,df2,perdidos)
 
-##Volvemos a buscar perdidos de los que aún no hemos encontrado pareja
+##Volvemos a buscar perdidos de los que aún no hemos encontrado pareja en el Grupo 2(FullNames FIFA)
 perdidos_2 = df[c("IDF","Name")]%>%
   filter(df$ID==0)
 head(perdidos_2)
@@ -146,6 +152,7 @@ df2=data.frame("IDF"=perdidos_2$IDF,"ID"=0, "Name"=perdidos_2$Name,"Real"=0)
 i=1
 j=1
 k=1
+#Este bucle tarda 3min
 for (i in 1:N_Perdidos){
   jugador = strsplit(perdidos_2[[2]]," ")[[i]]
   for (j in 1:length(jugador)){
@@ -164,11 +171,12 @@ df2[1:4,1:5]
 
 #Vemos que hay algunos jugadores como Kepa que aún podemos encontrar su ID
 #Pasamos a un Excel para hacer el mismo procedimiento anterior
-write.csv2(df2,"Data/Perdidos.csv")
+#write.csv2(df2,"Data/Perdidos.csv")
 
 Encontrados_2 <- read_delim("Data/Encontrados_2.csv", 
                             ";", escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
                             trim_ws = TRUE)
+head(Encontrados_2)
 sum(Encontrados_2$ID>0)
 
 #Añadimos 65 Perdidos más
@@ -188,14 +196,13 @@ head(df_aux);tail(df_aux)
 
 df = df_aux[c("IDF","ID.x","Name.x","Grupo")]
 colnames(df)=c("IDF","ID","Name","Grupo")
-
+head(df)
 rm(df_aux,Encontrados_2,df2,perdidos_2)
 
 #Tenemos disponibles 1023 fichajes de Verano/Invierno
 sum(df$ID>0)
 
 #Juntamos df con fut2018 para tener el ID en los Fichajes que despues juntaremos con los datos FIFA
-
 
 df_aux = fut2018 %>%
   left_join(df[c("ID","IDF")], by = c("IDF"="IDF")) %>%
@@ -250,16 +257,14 @@ sum(df$ID>0)
 rm(df_aux,df_aux2,Encontrados,Fifa_aux,duplicados,FIFANAMES,FUTNAMES)
 rm(h,i,IDF_Borrar,IDF_malos,j,jugador,k,N_Fichajes,N_Jugadores,N_Perdidos)
 
-write.csv2(df,"Data/Fichajes18.csv", row.names=FALSE)
+#write.csv2(df,"Data/Fichajes18.csv", row.names=FALSE)
 
 #Juntamos toda la info en una sola tabla RAW
-
 Raw <- FIFA18v1 %>% 
   left_join(df[c("ultimoClub", "nuevoClub", "coste", "mercado", "ID")], by = c("ID"="ID"))
 
-
 summary(Raw[c("club","age","overall","potential","coste","eur_value","eur_release_clause")])
-write.csv2(Raw,"Data/Raw.csv", row.names=FALSE)
+#write.csv2(Raw,"Data/Raw.csv", row.names=FALSE)
 
 #Creamos una tabla con los campos potenciamente importantes para visualizar en TABLEAU
 
@@ -276,4 +281,7 @@ Raw_tableau <- Raw[c("ID","name","club","league","birth_date","height_cm","weigh
          "rcm","rm","rdm","rcb","rb","rwb","st","lw","cf","cam","cm","lm","cdm","cb","lb","lwb","ls","lf","lam","lcm",
          "ldm","lcb","gk","ultimoClub","nuevoClub","coste","mercado")]
 
-write.csv2(Raw_tableau,"Data/Tableau/RawT.csv", row.names=FALSE)
+#write.csv2(Raw_tableau,"Data/Tableau/RawT.csv", row.names=FALSE)
+#Ir a la Carpeta Tableau para ver los Dashboard
+
+rm(df,FIFA18v1,fut2018,Raw_tableau)

@@ -4,11 +4,11 @@ library(lubridate)
 library(fmsb)
 
 
-Raw <- read_delim("Data/Raw.csv", ";", 
-                 escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
-                 trim_ws = TRUE)
+#Raw <- read_delim("Data/Raw.csv", ";", 
+#                 escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
+#                 trim_ws = TRUE)
 
-#Quitamos Columnas que no son útiles y calculamos la edad
+#Quitamos Columnas que no son útiles y calculamos la edad, tarda un par de minutos
 Raw <- Raw[,!names(Raw) %in% c("flag","club_logo","photo")]
 dia="2018-8-31" #Ultimo día del mercdo de fichajes 
 Raw$age = as.numeric(lapply(Raw$birth_date,function(X){floor(interval(X, dia) / duration(num = 1, units = "years"))}))
@@ -66,6 +66,7 @@ Raw = Raw %>%
          WORK_DEF = as.numeric(work_rate_def),
          coste = coste/1000000)
 
+#Creamos una tabla solo con las variables numericas
 df = Raw %>% select(ID,special,age,overall,potential,international_reputation,skill_moves,weak_foot,
                     WORK_ATK,WORK_DEF,jumping,POR,DEF,SPE,BAL,MEN,FUE,IMC,coste)
 
@@ -87,7 +88,6 @@ summary(train$coste)
 #write.csv2(test,"Data/Machine_Learning/Test.csv", row.names=FALSE)
 
 #Modelos
-
 
 modelo1=glm(coste~ ., data=train[,-1],family=gaussian(link = "identity"))
 summary(modelo1)
@@ -120,6 +120,7 @@ Predicciones$PredictMStep=round(predict(modeloStep,test),4)
 Predicciones$PredictMTop=round(predict(modeloTop,test),4)
 (MSEMTop =mean((Predicciones$coste - Predicciones$PredictMTop)^2))
 
+head(Predicciones)
 #Si Ploteamos una regresion polinomica podemos encontrar un modelo que ajuste mejor con nuestros datos
 
 VarPlot = c("special","overall","potential","POR","DEF","BAL","MEN","SPE","IMC")
@@ -245,5 +246,8 @@ df2 <-Raw %>%
   select(Variables2)
 
 
-write.csv2(df2,"Data/df2.csv", row.names=FALSE)
+#write.csv2(df2,"Data/df2.csv", row.names=FALSE)
 #Con esta tabla haremos el recomendador
+rm(df,modelo1,modeloExtra,modeloMP,modeloPolyMEN,modeloPolyOVE,modeloPolyPOT,modeloPolySPE,modeloStep,
+   modeloStepExtra,modeloTop,Predicciones,Raw,test,train,MSEM1,MSEMEN,MSEMStep,MSEMTop,MSEoverall,
+   MSEpotential,MSEspecial,MSEstepextra,MSETopPoly,repcoste,Variables1,Variables2,VarPlot)
