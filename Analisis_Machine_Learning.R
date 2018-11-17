@@ -246,7 +246,7 @@ df2 <-Raw %>%
   select(Variables2)
 
 
-#write.csv2(df2,"Data/df2.csv", row.names=FALSE)
+#write.csv2(df2,"Data/df2.csv", fileEncoding = 'ISO-8859-1',row.names = FALSE)
 #Con esta tabla haremos el recomendador
 rm(df,modelo1,modeloExtra,modeloMP,modeloPolyMEN,modeloPolyOVE,modeloPolyPOT,modeloPolySPE,modeloStep,
    modeloStepExtra,modeloTop,Predicciones,Raw,test,train,MSEM1,MSEMEN,MSEMStep,MSEMTop,MSEoverall,
