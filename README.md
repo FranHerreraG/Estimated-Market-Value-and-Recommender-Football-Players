@@ -5,4 +5,5 @@ Seguir las siguientes indicaciones:
 
 1º Lanzar PreparacionBBDD.r
 2º Ver los Dashboard de \Data\Tableau\
-3º
+3º Lanzar Analisis Machine Learning
+4º Shiny
