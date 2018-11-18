@@ -45,6 +45,7 @@ Raw[,Variables]= as.matrix(Raw[,Variables]) %>% replace_na(0)
 
 RawA <- Raw[,c(Variables1,Variables)]
 
+#Hacemos una tabla de correlaciones con las variables numericas
 CorA <- cor(RawA, method = c("pearson", "kendall", "spearman"))
 corrplot(CorA, method = "circle")
 
@@ -204,13 +205,13 @@ Predicciones$PredictMStepE=round(predict(modeloStepExtra,test),4)
 (MSEstepextra = mean((Predicciones$coste - Predicciones$PredictMStepE)^2))
 
 
-#Vemos que el MSE (mean square error) más pequeños nos lo da el modelo Poly con la variable potential
+#Vemos que el MSE (mean square error) más pequeños nos lo da el modelo Poly con la variable potential y el combinado
 data.frame(MSEMEN,MSEspecial,MSEoverall,MSEM1,MSEMStep,MSEMTop,MSEpotential,MSEstepextra)
 
 #Para saber si nuestros mejores modelos tienen multicolinealidad usamos el factor de inflacción de varianza VIF
 data.frame(VIF(modeloPolyPOT),VIF(modeloStepExtra))
 
-# A partir de 5 decimos que existe multicolinealidad, como en nuestro mejor modelo es 2.54 decimos que no existe multicolinealidad.
+# A partir de 5 decimos que existe multicolinealidad, como en nuestro mejor modelo es 2.54 asumimos que no existe multicolinealidad.
 
 
 # El modelo elegido es coste ~ special + I(special^2) + I(special^3) + age +

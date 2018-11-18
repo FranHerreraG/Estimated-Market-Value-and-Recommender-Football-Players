@@ -47,7 +47,7 @@ rm(fut,VectorBorrar,duplicados,AuxDuplicados)
 ###################
 
 
-#Guardamos los nombres de los jugadores de las dos tablas
+#Guardamos los nombres de los jugadores de las dos tablas para poder emparejarla tabla fichajes con la tabla Fifa
 FIFANAMES = FIFA18v1[c("ID","name","full_name","club")]
 FUTNAMES = fut2018[c("name","IDF")]
 (N_Fichajes = length(FUTNAMES[[1]]))#1364
@@ -118,6 +118,7 @@ df2[1:4,1:5]
 #Pasamos los perdidos a un Excel donde le otorgaremos los ID que veamos que corresponde
 #write.csv2(df2,"Data/Perdidos.csv")
 
+#A partir de los Perdidos creamos un Excel con los Id Encontrados
 Encontrados <- read_delim("Data/Encontrados.csv", 
                          ";", escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
                          trim_ws = TRUE)
@@ -208,7 +209,6 @@ rm(df_aux,Encontrados_2,df2,perdidos_2)
 sum(df$ID>0)
 
 #Juntamos df con fut2018 para tener el ID en los Fichajes que despues juntaremos con los datos FIFA
-
 df_aux = fut2018 %>%
   left_join(df[c("ID","IDF")], by = c("IDF"="IDF")) %>%
   filter(ID>0)
@@ -287,6 +287,6 @@ Raw_tableau <- Raw[c("ID","name","club","league","birth_date","height_cm","weigh
          "ldm","lcb","gk","ultimoClub","nuevoClub","coste","mercado")]
 
 #write.csv2(Raw_tableau,"Data/Tableau/RawT.csv", row.names=FALSE)
-#Ir a la Carpeta Tableau para ver los Dashboard
+#Ir a la Carpeta Data/Tableau para ver los Dashboard
 
 rm(df,FIFA18v1,fut2018,Raw_tableau)
