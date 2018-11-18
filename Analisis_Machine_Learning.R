@@ -2,6 +2,7 @@ list.of.packages <- c("tidyverse", "corrplot", "lubridat", "fmsb")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 
+#Cargamos las librerias
 library(tidyverse)
 library(corrplot)
 library(lubridate)

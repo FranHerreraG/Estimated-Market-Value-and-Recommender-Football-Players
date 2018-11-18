@@ -1,9 +1,12 @@
-list.of.packages <- c("tidyverse", "FNN", "shiny", "tibble", "reshape2")
+list.of.packages <- c("tidyverse", "FNN", "tibble", "reshape2")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 
+#Cargamos las librerias
 library(tidyverse)
 library(FNN)
+library(tibble)
+library(reshape2)
 
 df2 <- read.csv2("Data/df2.csv",encoding = "ISO-8859-1",dec = ",")
 IDS = c()
