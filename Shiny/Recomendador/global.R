@@ -3,12 +3,14 @@ library(FNN)
 library(shiny)
 library(tibble)
 library(reshape2)
-#df2 <- read.csv2("Data/df2.csv",encoding = "ISO-8859-1",dec = ",")
+df2 <- read.csv2(choose.files(),encoding = "ISO-8859-1",dec = ",")
 Nombres = c("20801 Cristiano Ronaldo", "158023 L. Messi", "176580 L. Suárez")
+
 Graficos <- function(Nombres,Presupuesto) {
   IDS = c()
   Jugadores = c()
   i=1
+  #Sacamos un vector con los nombres de los jugadores y otro cons sus ids
   for (i in 1:length(Nombres)) {
     AuxIds <- c(strsplit(Nombres, " ")[[i]][1])
     AuxJugadores <-
@@ -18,7 +20,6 @@ Graficos <- function(Nombres,Presupuesto) {
   }
   
   #Recomendador
-  
   Variables <- c("rs", "rw", "rf", "ram", "rcm", "rm", "rcb", "rb", "rwb", "st", "lw","cam",
                  "lm", "cdm", "cb", "lb", "lwb", "lf", "lcm", "ldm", "lcb", "gk")
   
@@ -101,6 +102,9 @@ Graficos <- function(Nombres,Presupuesto) {
     top_n(6)
   
   #FIN Recomendador
+  
+  #Grafico
+  
   VdM<- AUX %>%
     filter(ID %in% IDr) %>% 
     select(ValorMdo)
